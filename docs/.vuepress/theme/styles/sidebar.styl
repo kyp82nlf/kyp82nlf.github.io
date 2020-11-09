@@ -1,0 +1,208 @@
+ul > li > a.sidebar-link {
+	color: $sidebarTextColor;
+	font-weight: 500;
+	color: #666;
+}
+
+.page {
+	padding-left: calc(19rem + 30px);
+}
+#app .sidebar {
+	left: 30px !important;
+	.nav-links {
+		display: none !important;
+
+		.nav-item {
+			margin-left: 0;
+			font-size: 1em;
+		}
+	}
+
+	.sidebar-group-items {
+		font-size: 1em !important;
+
+		> li .sidebar-link {
+			font-size: 0.95em !important;
+		}
+	}
+
+	> .sidebar-links > li > a.sidebar-link, .sidebar-heading {
+		font-weight: bold !important;
+		font-size: 1em;
+	}
+
+	.sidebar-group.is-sub-group a.sidebar-link {
+		margin-bottom: 0.2rem;
+	}
+
+	.sidebar-group.is-sub-group > .sidebar-heading:not(.clickable) {
+		text-transform: uppercase;
+		font-size: 0.8rem;
+		line-height: 2em;
+	}
+}
+.sidebar-heading {
+	color: #666666 !important;
+}
+#app .sidebar > .sidebar-links > li > a.sidebar-link, #app .sidebar .sidebar-heading {
+	font-weight: 500 !important;
+}
+.sidebar-heading, a.sidebar-link {
+	border-left: 0!important;
+}
+.sidebar-group a.sidebar-link {
+	display: block;
+	width: 100% !important;
+	margin-left: 0;
+	padding-left: 0.5rem !important;
+}
+.sidebar-heading {
+	padding-left: 0.5rem !important;
+	border-radius: 5px;
+}
+#app .sidebar .sidebar-group-items {
+	width: calc(100% - 1rem) !important;
+	margin-left: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+#app .sidebar .sidebar-group.is-sub-group a.sidebar-link {
+	margin-bottom: 0 !important;
+}
+#app .sidebar-group.is-sub-group > .sidebar-group-items {
+	width: calc(100% - 1rem) !important;
+	margin-left: 1rem !important;
+	padding-left: 0rem !important;
+}
+#app .sidebar .sidebar-group-items > li .sidebar-link {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.sidebar-sub-header a.sidebar-link.active {
+	background: transparent !important;
+	color: #666 !important;
+}
+#app .sidebar .sidebar-group-items > li .sidebar-link:hover {
+	background: #F6F6F6;
+	font-weight: 500;
+}
+a.sidebar-link.active {
+	background: linear-gradient(123deg, #FFEC00 0%, #FDD600 100%);
+	color: #000 !important;
+}
+a.sidebar-link.active:hover {
+	background: linear-gradient(123deg, #FFEC00 0%, #FDD600 100%) !important;
+	color: #000 !important;
+}
+.router-link-exact-active {
+	background: linear-gradient(123deg, #FFEC00 0%, #FDD600 100%) !important;
+	color: #000 !important;
+}
+
+.sidebar-heading:hover {
+	background: #f6f6f6 !important;
+    font-weight: 500;
+}
+.router-link-exact-active:hover {
+	background: linear-gradient(123deg, #FFEC00 0%, #FDD600 100%) !important;
+	color: #000 !important;
+}
+#app .sidebar .sidebar-group-items {
+}
+#app .sidebar > ul.sidebar-links > li > ul.sidebar-links > li > a.sidebar-link:hover {
+	background: linear-gradient(123deg, #FFEC00 0%, #FDD600 100%) !important;
+	color: #000 !important;
+}
+.home-link:hover {
+	background: transparent !important;
+}
+.sidebar-heading.open {
+	background: #f6f6f6;
+    font-weight: 500;
+	color: #000;
+}
+.icon.outbound {
+	padding-left: 0.15rem;
+}
+
+// sidebar scrollbar style
+.sidebar-links::-webkit-scrollbar {
+	width: 5px;
+	position: fixed;
+	right: 0;
+}
+
+.sidebar-links::-webkit-scrollbar-thumb {
+	background: transparent;
+	transition: background-color 2s;
+}
+
+.sidebar-links::-webkit-scrollbar-thumb:hover, .sidebar-links:hover::-webkit-scrollbar-thumb {
+	background: $borderColor;
+}
+.breadcrumbs .router-link-active {
+	background: transparent !important;
+}
+@media (max-width: $MQMobile) {
+	.sidebar {
+		width: 80vw;
+	}
+}
+
+// style selected sidebar item based on route class
+html.route-index {
+	.sidebar .nav-links .nav-item:first-child {
+		a.nav-link {
+			color: $accentColor;
+		}
+	}
+}
+
+@media (min-width: $MQMobile) {
+	aside.sidebar {
+		display: flex;
+		flex-direction: column;
+		overflow: hidden;
+		box-sizing: border-box;
+
+		> .sidebar-links {
+			padding: 1rem 0;
+			box-sizing: border-box;
+			flex-grow: 1;
+
+			> li:last-child {
+				margin-bottom: 1rem;
+			}
+
+			a {
+				&.active {
+					opacity: 1;
+
+					a {
+						opacity: 1;
+					}
+				}
+
+				opacity: 0.7;
+				transition: opacity 0.5s;
+			}
+
+			&:hover a {
+				opacity: 1;
+			}
+
+			overflow: auto;
+		}
+
+		.nav-links, .nav-links a {
+			display: block;
+		}
+
+		.nav-item > a:not(.external) {
+			&:hover, &.router-link-active {
+				margin-bottom: 0px;
+				border-bottom: none;
+				color: $accentColor;
+			}
+		}
+	}
+}
